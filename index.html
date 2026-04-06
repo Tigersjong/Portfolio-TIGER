@@ -1,113 +1,1106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suriyawong | Digital Marketing Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #1e3a8a;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px;
-        }
-        section {
-            padding: 50px;
-            text-align: center;
-        }
-        .cta-button {
-            background: #1e3a8a;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #1e3a8a;
-            color: #fff;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suriyawong J. — Paid Media & Digital Marketing Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07091A;
+  --bg2: #0D1228;
+  --bg3: #111830;
+  --blue: #3B82F6;
+  --blue-dim: rgba(59,130,246,0.12);
+  --blue-border: rgba(59,130,246,0.25);
+  --cyan: #06B6D4;
+  --cyan-dim: rgba(6,182,212,0.10);
+  --text: #F0F4FF;
+  --text-muted: rgba(240,244,255,0.50);
+  --text-dim: rgba(240,244,255,0.28);
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(255,255,255,0.14);
+  --font-display: 'Syne', 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+  background: rgba(7,9,26,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--blue);
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: opacity 0.2s !important;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+/* ─── SECTIONS ─── */
+section { padding: 100px 5%; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+.section-label::before {
+  content: '';
+  display: block; width: 24px; height: 1px;
+  background: var(--cyan);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.hero-glow1 {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+  top: -100px; right: -100px; pointer-events: none;
+}
+.hero-glow2 {
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(6,182,212,0.08) 0%, transparent 70%);
+  bottom: 0; left: 200px; pointer-events: none;
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 1100px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue-dim); border: 1px solid var(--blue-border);
+  border-radius: 100px; padding: 6px 16px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+  color: #93C5FD; margin-bottom: 28px;
+}
+.hero-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
+.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5.5vw, 68px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.hero-h1 .blue { color: var(--blue); }
+.hero-h1 .cyan { color: var(--cyan); }
+.hero-role {
+  font-size: 18px; font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+.hero-role strong { color: var(--text); font-weight: 500; }
+.hero-desc {
+  font-size: 16px; color: var(--text-muted);
+  line-height: 1.75; margin-bottom: 40px;
+  max-width: 520px;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--blue); color: #fff;
+  padding: 14px 28px; border-radius: 100px;
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-outline {
+  background: transparent; color: var(--text);
+  padding: 14px 28px; border-radius: 100px;
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  text-decoration: none; border: 1px solid var(--border-hover);
+  cursor: pointer; transition: border-color 0.2s, transform 0.2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.35); transform: translateY(-1px); }
+
+/* Hero right card */
+.hero-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+.hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; }
+.hero-stat {
+  background: var(--bg3);
+  padding: 20px 18px;
+}
+.hero-stat-val {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 800;
+  color: var(--text); letter-spacing: -0.02em;
+  line-height: 1;
+}
+.hero-stat-val .unit { font-size: 13px; font-weight: 400; color: var(--text-muted); }
+.hero-stat-lbl { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+.hero-platforms { display: flex; flex-wrap: wrap; gap: 6px; }
+.plat { font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 6px; border: 1px solid; letter-spacing: 0.04em; }
+.p-meta { background: rgba(24,119,242,0.12); border-color: rgba(24,119,242,0.35); color: #60A5FA; }
+.p-google { background: rgba(234,67,53,0.10); border-color: rgba(234,67,53,0.35); color: #FCA5A5; }
+.p-tiktok { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.15); color: #CBD5E1; }
+.p-ecomm { background: rgba(255,153,0,0.10); border-color: rgba(255,153,0,0.35); color: #FCD34D; }
+.p-seo { background: rgba(34,197,94,0.10); border-color: rgba(34,197,94,0.35); color: #86EFAC; }
+.p-gtm { background: rgba(168,85,247,0.10); border-color: rgba(168,85,247,0.35); color: #C4B5FD; }
+
+/* ─── ABOUT ─── */
+#about { background: var(--bg2); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.about-highlight {
+  border-left: 3px solid var(--blue);
+  padding-left: 20px; margin: 28px 0;
+  font-size: 18px; font-weight: 300; color: var(--text-muted);
+  font-style: italic; line-height: 1.6;
+}
+.about-highlight strong { color: var(--text); font-style: normal; font-weight: 500; }
+.exp-list { display: flex; flex-direction: column; gap: 16px; }
+.exp-item {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  transition: border-color 0.2s;
+}
+.exp-item:hover { border-color: var(--blue-border); }
+.exp-period { font-size: 11px; color: var(--cyan); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 6px; }
+.exp-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.exp-company { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.exp-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+/* ─── SERVICES ─── */
+#services { background: var(--bg); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+.svc-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px 24px;
+  transition: border-color 0.25s, transform 0.25s;
+  position: relative; overflow: hidden;
+}
+.svc-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  opacity: 0; transition: opacity 0.25s;
+}
+.svc-card:hover { border-color: var(--blue-border); transform: translateY(-4px); }
+.svc-card:hover::before { opacity: 1; }
+.svc-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--blue-dim); border: 1px solid var(--blue-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 16px;
+}
+.svc-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.svc-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; margin-bottom: 14px; }
+.svc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.svc-tag {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.04em;
+  padding: 3px 9px; border-radius: 4px;
+  background: rgba(255,255,255,0.05); color: var(--text-dim);
+  border: 1px solid var(--border);
+}
+
+/* ─── STATS ─── */
+#stats {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 5%;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.stat-box {
+  background: var(--bg3); padding: 36px 28px; text-align: center;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 42px; font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.stat-label { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.4; }
+
+/* ─── INDUSTRIES ─── */
+#industries { background: var(--bg); }
+.ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 48px; }
+.ind-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px 20px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ind-card:hover { border-color: var(--blue-border); transform: translateY(-3px); }
+.ind-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+.ind-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.ind-desc { font-size: 12px; color: var(--text-muted); line-height: 1.55; }
+
+/* ─── PACKAGES ─── */
+#packages { background: var(--bg2); }
+.pkg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+.pkg-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px 22px;
+  display: flex; flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s;
+  position: relative;
+}
+.pkg-card.featured {
+  border-color: var(--blue);
+  background: linear-gradient(160deg, rgba(59,130,246,0.08) 0%, var(--bg3) 60%);
+}
+.pkg-popular {
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  background: var(--blue); color: #fff;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+  padding: 4px 14px; border-radius: 100px; white-space: nowrap;
+}
+.pkg-tier { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+.pkg-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.pkg-price { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; line-height: 1; }
+.pkg-price-unit { font-size: 12px; font-weight: 400; color: var(--text-muted); margin-left: 2px; }
+.pkg-budget { font-size: 11px; color: var(--text-dim); margin: 6px 0 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.pkg-budget strong { color: var(--cyan); font-weight: 500; }
+.pkg-features { list-style: none; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.pkg-features li { display: flex; gap: 9px; font-size: 12px; color: var(--text-muted); align-items: flex-start; line-height: 1.45; }
+.pkg-chk { color: #34D399; flex-shrink: 0; font-size: 13px; }
+.pkg-dash { color: var(--text-dim); flex-shrink: 0; }
+.pkg-features li.off { color: var(--text-dim); }
+.pkg-btn {
+  margin-top: 24px; padding: 11px 0; border-radius: 100px;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--border-hover);
+  background: transparent; color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center; text-decoration: none; display: block;
+}
+.pkg-btn:hover { border-color: var(--blue); color: var(--blue); }
+.pkg-btn.featured-btn { background: var(--blue); border-color: var(--blue); color: #fff; }
+.pkg-btn.featured-btn:hover { opacity: 0.88; }
+
+/* ─── PROCESS ─── */
+#process { background: var(--bg); }
+.process-flow { display: flex; flex-direction: column; gap: 0; margin-top: 48px; max-width: 700px; }
+.proc-step { display: flex; gap: 24px; }
+.proc-left { display: flex; flex-direction: column; align-items: center; }
+.proc-num {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: var(--blue-dim); border: 1px solid var(--blue-border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 14px; font-weight: 800; color: var(--blue);
+}
+.proc-line { width: 1px; flex: 1; background: var(--border); margin: 8px 0; min-height: 32px; }
+.proc-body { padding: 6px 0 36px; }
+.proc-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.proc-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+.proc-time { display: inline-block; font-size: 11px; color: var(--cyan); font-weight: 600; letter-spacing: 0.06em; margin-top: 8px; }
+
+/* ─── ADDONS ─── */
+#addons { background: var(--bg2); }
+.addons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
+.addon-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 16px; transition: border-color 0.2s;
+}
+.addon-card:hover { border-color: var(--border-hover); }
+.addon-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.addon-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+.addon-price { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--blue); white-space: nowrap; flex-shrink: 0; }
+.addon-price-unit { font-size: 10px; font-weight: 400; color: var(--text-dim); display: block; text-align: right; }
+
+/* ─── CTA ─── */
+#cta {
+  background: var(--bg);
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-glow {
+  position: absolute; width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 1; }
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800; letter-spacing: -0.03em;
+  color: var(--text); margin-bottom: 16px; line-height: 1.1;
+}
+.cta-title .blue { color: var(--blue); }
+.cta-sub { font-size: 17px; color: var(--text-muted); margin-bottom: 40px; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px; }
+.contact-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  transition: border-color 0.2s;
+}
+.contact-card:hover { border-color: var(--blue-border); }
+.contact-label { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+.contact-value { font-size: 15px; font-weight: 500; color: var(--text); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 32px 5%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-logo { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--text); }
+.footer-logo span { color: var(--blue); }
+.footer-copy { font-size: 12px; color: var(--text-dim); }
+
+/* ─── ANIMATIONS ─── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── DIVIDER ─── */
+.divider { height: 1px; background: var(--border); margin: 0; }
+
+/* ─── LANG TOGGLE ─── */
+.lang-btn {
+  background: transparent; border: 1px solid var(--border-hover);
+  border-radius: 100px; padding: 5px 14px; cursor: pointer;
+  font-family: var(--font-body); font-size: 12px; font-weight: 600;
+  color: var(--text-muted); letter-spacing: 0.06em;
+  transition: border-color 0.2s, color 0.2s; display: flex; align-items: center; gap: 6px;
+}
+.lang-btn:hover { border-color: var(--blue); color: var(--text); }
+.lang-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+
+/* ─── HAMBURGER ─── */
+.ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.ham span { display: block; width: 22px; height: 2px; background: var(--text-muted); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+.ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.ham.open span:nth-child(2) { opacity: 0; }
+.ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu {
+  display: none; flex-direction: column; gap: 0;
+  position: absolute; top: 64px; left: 0; right: 0;
+  background: rgba(7,9,26,0.98); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px); z-index: 99; padding: 12px 0;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  padding: 14px 6%; font-size: 15px; font-weight: 500;
+  color: var(--text-muted); text-decoration: none;
+  border-bottom: 1px solid var(--border); transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--text); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .lang-btn { margin: 12px 6%; width: fit-content; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .pkg-grid { grid-template-columns: repeat(3, minmax(0,1fr)) !important; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-card { max-width: 500px; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  .ham { display: flex; }
+  section { padding: 72px 4%; }
+  #stats { padding: 60px 4%; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; padding-top: 16px; }
+  .hero-h1 { font-size: clamp(36px, 10vw, 52px); }
+  .hero-card { max-width: 100%; }
+  .hero-role { font-size: 15px; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-box { padding: 24px 16px; }
+  .stat-num { font-size: 32px; }
+  .ind-grid { grid-template-columns: repeat(2, 1fr); }
+  .pkg-grid { grid-template-columns: 1fr !important; }
+  .addons-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  #process .container > div { grid-template-columns: 1fr !important; gap: 32px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+  .section-title { font-size: clamp(26px, 7vw, 38px); }
+  .section-sub { font-size: 15px; }
+  .hero-desc { font-size: 14px; }
+  .cta-sub { font-size: 15px; }
+  .nav-logo { font-size: 16px; }
+  .addon-card { flex-direction: column; gap: 10px; }
+  .addon-card > div:last-child { display: flex; align-items: baseline; gap: 6px; }
+  .addon-price-unit { display: inline; }
+}
+
+@media (max-width: 480px) {
+  .hero-btns { flex-direction: column; }
+  .btn-primary, .btn-outline { text-align: center; justify-content: center; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .ind-grid { grid-template-columns: 1fr; }
+  .hero-stat-val { font-size: 20px; }
+  .pkg-card { padding: 22px 16px; }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .ind-grid { grid-template-columns: repeat(2, 1fr); }
+  .addons-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  #process .container > div { grid-template-columns: 1fr 1fr !important; gap: 40px; }
+  .contact-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Suriyawong Jongkhae</h1>
-        <p>Digital Marketing Specialist | SEO | Ads Management</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="hero">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Bringing ideas to life with strategic digital marketing</p>
-        <a href="#contact" class="cta-button">Let's Work Together</a>
+
+<!-- ─── NAV ─── -->
+<nav id="main-nav">
+  <div class="nav-logo">Tiger<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about" data-th="เกี่ยวกับ" data-en="About">เกี่ยวกับ</a>
+    <a href="#services" data-th="บริการ" data-en="Services">บริการ</a>
+    <a href="#industries" data-th="อุตสาหกรรม" data-en="Industries">อุตสาหกรรม</a>
+    <a href="#packages" data-th="แพ็กเกจ" data-en="Packages">แพ็กเกจ</a>
+    <a href="#cta" class="nav-cta" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="lang-btn" id="langToggle" onclick="toggleLang()">
+      <span class="lang-dot"></span><span id="langLabel">EN</span>
+    </button>
+    <button class="ham" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()" data-th="เกี่ยวกับ" data-en="About">เกี่ยวกับ</a>
+  <a href="#services" onclick="closeMenu()" data-th="บริการ" data-en="Services">บริการ</a>
+  <a href="#industries" onclick="closeMenu()" data-th="อุตสาหกรรม" data-en="Industries">อุตสาหกรรม</a>
+  <a href="#packages" onclick="closeMenu()" data-th="แพ็กเกจ" data-en="Packages">แพ็กเกจ</a>
+  <a href="#cta" onclick="closeMenu()" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge reveal">
+        <div class="hero-dot"></div>
+        Agency Level · Paid Media Specialist · Chiang Mai      </div>
+      <h1 class="hero-h1 reveal reveal-delay-1">
+        Suriyawong<span class="blue"> J.</span><br>
+        <span class="cyan">Tiger</span>
+      </h1>
+      <p class="hero-role reveal reveal-delay-2">
+        <strong data-th="ผู้เชี่ยวชาญด้านสื่อโฆษณาและกลยุทธ์" data-en="Touchpoint & Media Strategy Specialist">Touchpoint & Media Strategy Specialist</strong>
+      </p>
+      <p class="hero-desc reveal reveal-delay-3" data-th="ผู้เชี่ยวชาญด้าน Paid Media ที่บริหารแคมเปญโฆษณาจริงในระดับ Agency ให้กับแบรนด์ชั้นนำหลากหลายอุตสาหกรรม ด้วยงบโฆษณารวมกว่า 300,000–500,000 บาท/เดือน" data-en="Paid Media specialist managing real Agency-level campaigns for leading brands across multiple industries, with a combined ad budget of 300,000–500,000 THB/month.">
+        ผู้เชี่ยวชาญด้าน Paid Media ที่บริหารแคมเปญโฆษณาจริงในระดับ Agency ให้กับแบรนด์ชั้นนำหลากหลายอุตสาหกรรม ด้วยงบโฆษณารวมกว่า 300,000–500,000 บาท/เดือน
+      </p>
+      <div class="hero-btns reveal reveal-delay-4">
+        <a href="#packages" class="btn-primary" data-th="ดู Packages →" data-en="View Packages →">ดู Packages →</a>
+        <a href="#cta" class="btn-outline" data-th="ติดต่อโดยตรง" data-en="Contact Directly">ติดต่อโดยตรง</a>
+      </div>
     </div>
+    <div class="hero-card reveal reveal-delay-2">
+      <div class="hero-stat-grid">
+        <div class="hero-stat">
+          <div class="hero-stat-val">500K<span class="unit">฿</span></div>
+          <div class="hero-stat-lbl" data-th="งบโฆษณาสูงสุด/เดือน" data-en="Max ad budget/month">งบโฆษณาสูงสุด/เดือน</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">7<span class="unit">+</span></div>
+          <div class="hero-stat-lbl" data-th="อุตสาหกรรมที่ดูแล" data-en="Industries served">อุตสาหกรรมที่ดูแล</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">4<span class="unit">+</span></div>
+          <div class="hero-stat-lbl" data-th="แพลตฟอร์มโฆษณา" data-en="Ad platforms">แพลตฟอร์มโฆษณา</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">3<span class="unit">ปี</span></div>
+          <div class="hero-stat-lbl" data-th="ประสบการณ์จริง" data-en="Real experience">ประสบการณ์จริง</div>
+        </div>
+      </div>
+      <div class="hero-platforms">
+        <span class="plat p-meta">META ADS</span>
+        <span class="plat p-google">GOOGLE ADS</span>
+        <span class="plat p-tiktok">TIKTOK ADS</span>
+        <span class="plat p-ecomm">E-COMMERCE</span>
+        <span class="plat p-seo">SEO</span>
+        <span class="plat p-gtm">GTM & PIXEL</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a digital marketing specialist with expertise in Facebook Ads, Google Ads, SEO, and content strategy.</p>
-    </section>
+<!-- ─── STATS ─── -->
+<div id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-box reveal">
+        <div class="stat-num">300K+</div>
+        <div class="stat-label">งบโฆษณาที่บริหาร<br>ต่อเดือน (฿)</div>
+      </div>
+      <div class="stat-box reveal reveal-delay-1">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">อุตสาหกรรม<br>ที่มีประสบการณ์จริง</div>
+      </div>
+      <div class="stat-box reveal reveal-delay-2">
+        <div class="stat-num">4</div>
+        <div class="stat-label">แพลตฟอร์มโฆษณา<br>ที่ดูแลพร้อมกัน</div>
+      </div>
+      <div class="stat-box reveal reveal-delay-3">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">วัดผลได้จริง<br>ทุกแคมเปญ</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <section id="work">
-        <h2>Work Experience</h2>
-        <ul>
-            <li><strong>Malada</strong> - Digital Marketing & Ads Manager</li>
-            <li><strong>RD Corporation</strong> - Business Development</li>
-            <li><strong>Bureau of Weights and Measures</strong> - General Admin Officer</li>
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label reveal">About</div>
+        <h2 class="section-title reveal reveal-delay-1" data-th="มากกว่า Freelance —<br>คือ Agency จริง" data-en="More Than Freelance —<br>Real Agency Level">มากกว่า Freelance —<br>คือ Agency จริง</h2>
+        <p class="section-sub reveal reveal-delay-2" data-th="ไม่ใช่แค่คนรับงานทั่วไป แต่คือ Specialist ที่ทำงานในระดับ Agency จริง ต้องรับผิดชอบงบจริง รายงานให้ลูกค้าจริง และวัดผลได้จริงทุกเดือน" data-en="Not just a regular freelancer — a Specialist working at real Agency level, accountable for real budgets, real client reports, and measurable results every month.">
+          ไม่ใช่แค่คนรับงานทั่วไป แต่คือ Specialist ที่ทำงานในระดับ Agency จริง ต้องรับผิดชอบงบจริง รายงานให้ลูกค้าจริง และวัดผลได้จริงทุกเดือน
+        </p>
+        <blockquote class="about-highlight reveal reveal-delay-3">
+          "ทุกบาทที่คุณลงทุนใน Ads <strong>ต้องวัดผลได้</strong> — ไม่มียิงสุ่ม ไม่มีข้อแก้ตัว"
+        </blockquote>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.75;" class="reveal reveal-delay-4" data-th="ปัจจุบันดำรงตำแหน่ง Touchpoint & Media Strategy Specialist พร้อมกับบริหาร The Royal Shilton Resort — boutique hotel ย่าน Old City เชียงใหม่ ทำให้มีมุมมองทั้งฝั่ง Agency และฝั่ง Business Owner จริงๆ" data-en="Currently serving as Touchpoint & Media Strategy Specialist while co-managing The Royal Shilton Resort — a boutique hotel in Chiang Mai's Old City — providing perspective from both Agency and Business Owner sides.">
+          ปัจจุบันดำรงตำแหน่ง <strong style="color:var(--text)">Touchpoint & Media Strategy Specialist</strong> พร้อมกับบริหาร The Royal Shilton Resort — boutique hotel ย่าน Old City เชียงใหม่ ทำให้มีมุมมองทั้งฝั่ง Agency และฝั่ง Business Owner จริงๆ
+        </p>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item reveal">
+          <div class="exp-period">2025 – ปัจจุบัน</div>
+          <div class="exp-title">Touchpoint & Media Strategy Specialist</div>
+          <div class="exp-desc">บริหารแคมเปญโฆษณาและวางกลยุทธ์ให้ลูกค้าหลากหลายอุตสาหกรรม งบโฆษณา 300K–500K฿/เดือน</div>
+        </div>
+        <div class="exp-item reveal reveal-delay-1">
+          <div class="exp-period">2025 – ปัจจุบัน</div>
+          <div class="exp-title">Digital Marketing Manager & Co-owner</div>
+          <div class="exp-desc">The Royal Shilton Resort — ดูแลการตลาดออนไลน์ครบวงจร OTA Management และ Revenue Dashboard</div>
+        </div>
+        <div class="exp-item reveal reveal-delay-2">
+          <div class="exp-period">การศึกษา</div>
+          <div class="exp-title">Bachelor of Business Administration (BBA)</div>
+          <div class="exp-company">มหาวิทยาลัยแม่ฟ้าหลวง</div>
+          <div class="exp-desc">สาขาบริหารธุรกิจ · Meta & Google Ads Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section id="services">
+  <div class="container">
+    <div class="section-label reveal">Services</div>
+    <h2 class="section-title reveal reveal-delay-1" data-th="บริการที่รวมอยู่<br>ในทุก Package" data-en="Services Included<br>in Every Package">บริการที่รวมอยู่<br>ในทุก Package</h2>
+    <p class="section-sub reveal reveal-delay-2" data-th="บริการครบวงจรที่ออกแบบมาให้ธุรกิจคุณเติบโตได้จริง ไม่ใช่แค่ตัวเลขสวยงามบนรายงาน" data-en="Comprehensive services designed to grow your business for real — not just pretty numbers on a report.">บริการครบวงจรที่ออกแบบมาให้ธุรกิจคุณเติบโตได้จริง ไม่ใช่แค่ตัวเลขสวยงามบนรายงาน</p>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon">📣</div>
+        <div class="svc-title">Paid Social Advertising</div>
+        <div class="svc-desc">วางกลยุทธ์และบริหารแคมเปญ Meta Ads (Facebook & Instagram) ครบทุก Objective ตั้งแต่ Awareness ถึง Conversion</div>
+        <div class="svc-tags">
+          <span class="svc-tag">Campaign Strategy</span>
+          <span class="svc-tag">Audience Research</span>
+          <span class="svc-tag">Retargeting</span>
+          <span class="svc-tag">A/B Testing</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon">🔍</div>
+        <div class="svc-title">Google Ads Management</div>
+        <div class="svc-desc">บริหาร Search, Performance Max, Display และ YouTube Ads พร้อม Keyword Research และ Bidding Strategy ที่เหมาะสม</div>
+        <div class="svc-tags">
+          <span class="svc-tag">Search Ads</span>
+          <span class="svc-tag">Performance Max</span>
+          <span class="svc-tag">Smart Bidding</span>
+          <span class="svc-tag">GA4 Linking</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon">🎵</div>
+        <div class="svc-title">TikTok & E-Commerce Ads</div>
+        <div class="svc-desc">รัน TikTok In-Feed, Spark Ads และบริหารโฆษณา E-Commerce บน Shopee / Lazada เพื่อ ROAS สูงสุด</div>
+        <div class="svc-tags">
+          <span class="svc-tag">In-Feed Ads</span>
+          <span class="svc-tag">Spark Ads</span>
+          <span class="svc-tag">Shopee Ads</span>
+          <span class="svc-tag">ROAS Optimize</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-delay-3">
+        <div class="svc-icon">📊</div>
+        <div class="svc-title">Pixel & GTM Tracking</div>
+        <div class="svc-desc">ติดตั้ง Meta Pixel, Google Tag, Conversion API และ Events ผ่าน GTM อย่างถูกต้อง ให้ข้อมูลแม่นที่สุด</div>
+        <div class="svc-tags">
+          <span class="svc-tag">Meta Pixel</span>
+          <span class="svc-tag">Conversion API</span>
+          <span class="svc-tag">GTM Setup</span>
+          <span class="svc-tag">Event Tracking</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon">🗂️</div>
+        <div class="svc-title">CRM & Lead Tracking</div>
+        <div class="svc-desc">สร้าง CRM Sheet ติดตาม Lead แบบ Real-time เชื่อมต่ออัตโนมัติจาก Meta Form ช่วยทีม Sales ปิดงานเร็วขึ้น</div>
+        <div class="svc-tags">
+          <span class="svc-tag">Google Sheet CRM</span>
+          <span class="svc-tag">Auto Lead Import</span>
+          <span class="svc-tag">Funnel Tracking</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon">📈</div>
+        <div class="svc-title">Monthly Report & Strategy</div>
+        <div class="svc-desc">รายงานรายเดือนที่ไม่ใช่แค่ตัวเลข — มีการวิเคราะห์ Insight และ Action Plan ที่นำไปใช้ได้จริงเดือนถัดไป</div>
+        <div class="svc-tags">
+          <span class="svc-tag">Performance Report</span>
+          <span class="svc-tag">Insights Analysis</span>
+          <span class="svc-tag">Next Month Plan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INDUSTRIES ─── -->
+<section id="industries" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-label reveal">Industries</div>
+    <h2 class="section-title reveal reveal-delay-1" data-th="ประสบการณ์จริง<br>หลากหลายอุตสาหกรรม" data-en="Real Experience<br>Across Multiple Industries">ประสบการณ์จริง<br>หลากหลายอุตสาหกรรม</h2>
+    <p class="section-sub reveal reveal-delay-2" data-th="แต่ละอุตสาหกรรมมี Buyer Journey, KPI และความท้าทายที่แตกต่างกัน — ประสบการณ์คือสิ่งที่ทำให้วางกลยุทธ์ได้ถูกต้องตั้งแต่วันแรก" data-en="Each industry has its own Buyer Journey, KPIs, and challenges — experience is what makes strategy right from day one.">แต่ละอุตสาหกรรมมี Buyer Journey, KPI และความท้าทายที่แตกต่างกัน — ประสบการณ์คือสิ่งที่ทำให้วางกลยุทธ์ได้ถูกต้องตั้งแต่วันแรก</p>
+    <div class="ind-grid">
+      <div class="ind-card reveal">
+        <span class="ind-icon">💆</span>
+        <div class="ind-name">คลินิกเสริมความงาม</div>
+        <div class="ind-desc">Lead Generation, CPL Optimization, Booking Funnel สำหรับคลินิกผิวหนังและความงาม</div>
+      </div>
+      <div class="ind-card reveal reveal-delay-1">
+        <span class="ind-icon">🎓</span>
+        <div class="ind-name">โรงเรียนนานาชาติ</div>
+        <div class="ind-desc">Enrollment Campaign, Parent Targeting, Bilingual Ads สำหรับ International Schools</div>
+      </div>
+      <div class="ind-card reveal reveal-delay-2">
+        <span class="ind-icon">🏠</span>
+        <div class="ind-name">อสังหาริมทรัพย์</div>
+        <div class="ind-desc">Project Launch, Lead Nurturing, Real Estate Funnel สำหรับโครงการบ้านและคอนโด</div>
+      </div>
+      <div class="ind-card reveal reveal-delay-3">
+        <span class="ind-icon">✨</span>
+        <div class="ind-name">สกินแคร์ & Beauty</div>
+        <div class="ind-desc">E-Commerce Ads, ROAS Optimization, TikTok Shop สำหรับแบรนด์ความงามไทย</div>
+      </div>
+      <div class="ind-card reveal">
+        <span class="ind-icon">🏨</span>
+        <div class="ind-name">โรงแรมและบริการ</div>
+        <div class="ind-desc">OTA Management, Direct Booking Campaign, Revenue Optimization สำหรับ Hospitality</div>
+      </div>
+      <div class="ind-card reveal reveal-delay-1">
+        <span class="ind-icon">🦁</span>
+        <div class="ind-name">สวนสัตว์ & Tourism</div>
+        <div class="ind-desc">Attraction Marketing, Multi-language Ads, Tourist Targeting สำหรับสถานที่ท่องเที่ยว</div>
+      </div>
+      <div class="ind-card reveal reveal-delay-2">
+        <span class="ind-icon">🏭</span>
+        <div class="ind-name">OEM / ODM Cosmetics</div>
+        <div class="ind-desc">B2B Lead Gen, Factory Branding, LinkedIn + Meta Strategy สำหรับโรงงานเครื่องสำอาง</div>
+      </div>
+      <div class="ind-card reveal reveal-delay-3">
+        <span class="ind-icon">🧼</span>
+        <div class="ind-name">Organic Beauty & Soap</div>
+        <div class="ind-desc">Shopee / Lazada Ads, TikTok Shop, Natural Product Positioning สำหรับแบรนด์ Organic</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PACKAGES ─── -->
+<section id="packages">
+  <div class="container">
+    <div class="section-label reveal">Packages</div>
+    <h2 class="section-title reveal reveal-delay-1" data-th="เลือก Package<br>ที่เหมาะกับธุรกิจคุณ" data-en="Choose the Package<br>that Fits Your Business">เลือก Package<br>ที่เหมาะกับธุรกิจคุณ</h2>
+    <p class="section-sub reveal reveal-delay-2" data-th="ราคาเหมาจ่ายรายเดือน ต่อ 1 แบรนด์ รวมทุกบัญชีในแบรนด์เดียวกัน — ไม่รวม Ad Spend" data-en="Flat monthly rate per brand, covering all accounts under the same brand — Ad Spend not included.">ราคาเหมาจ่ายรายเดือน ต่อ 1 แบรนด์ รวมทุกบัญชีในแบรนด์เดียวกัน — <strong style="color:var(--text)">ไม่รวม Ad Spend</strong></p>
+    <div class="pkg-grid" style="grid-template-columns:repeat(5,minmax(0,1fr));">
+      <div class="pkg-card reveal">
+        <div class="pkg-tier">Tier 1</div>
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-price">8,900<span class="pkg-price-unit">฿/เดือน</span></div>
+        <div class="pkg-budget">งบโฆษณา <strong>20K–50K ฿/เดือน</strong></div>
+        <ul class="pkg-features">
+          <li><span class="pkg-chk">✓</span>1 แพลตฟอร์ม (Meta หรือ Google)</li>
+          <li><span class="pkg-chk">✓</span>Campaign Setup & Optimization</li>
+          <li><span class="pkg-chk">✓</span>Audience Research & Targeting</li>
+          <li><span class="pkg-chk">✓</span>Ad Creative Brief</li>
+          <li><span class="pkg-chk">✓</span>Weekly Mini Report x4</li>
+          <li><span class="pkg-chk">✓</span>Monthly Report (PDF)</li>
+          <li><span class="pkg-chk">✓</span>Chat Support จ–ศ</li>
+          <li class="off"><span class="pkg-dash">–</span>Pixel & GTM Tracking</li>
+          <li class="off"><span class="pkg-dash">–</span>CRM Lead Sheet</li>
+          <li class="off"><span class="pkg-dash">–</span>Strategy Call</li>
         </ul>
-    </section>
+        <a href="#cta" class="pkg-btn">เริ่มต้นที่นี่</a>
+      </div>
+      <div class="pkg-card featured reveal reveal-delay-1">
+        <div class="pkg-popular">แนะนำ</div>
+        <div class="pkg-tier">Tier 2</div>
+        <div class="pkg-name">Growth</div>
+        <div class="pkg-price">15,900<span class="pkg-price-unit">฿/เดือน</span></div>
+        <div class="pkg-budget">งบโฆษณา <strong>50K–150K ฿/เดือน</strong></div>
+        <ul class="pkg-features">
+          <li><span class="pkg-chk">✓</span>2 แพลตฟอร์ม (Meta+Google หรือ +TikTok)</li>
+          <li><span class="pkg-chk">✓</span>Campaign Setup & Optimization</li>
+          <li><span class="pkg-chk">✓</span>Pixel & GTM Tracking Setup</li>
+          <li><span class="pkg-chk">✓</span>CRM Lead Tracking Sheet</li>
+          <li><span class="pkg-chk">✓</span>Audience, Lookalike & Retargeting</li>
+          <li><span class="pkg-chk">✓</span>Weekly Report x4 (ทั้ง 2 แพลตฟอร์ม)</li>
+          <li><span class="pkg-chk">✓</span>Monthly Full Report + Action Plan</li>
+          <li><span class="pkg-chk">✓</span>Strategy Call 30 นาที/เดือน</li>
+          <li><span class="pkg-chk">✓</span>Chat Support ตลอดเดือน</li>
+          <li class="off"><span class="pkg-dash">–</span>SEO & E-Commerce Ads</li>
+        </ul>
+        <a href="#cta" class="pkg-btn featured-btn">เลือก Growth</a>
+      </div>
+      <div class="pkg-card reveal reveal-delay-2">
+        <div class="pkg-tier">Tier 3</div>
+        <div class="pkg-name">Scale</div>
+        <div class="pkg-price">22,900<span class="pkg-price-unit">฿/เดือน</span></div>
+        <div class="pkg-budget">งบโฆษณา <strong>150K–300K ฿/เดือน</strong></div>
+        <ul class="pkg-features">
+          <li><span class="pkg-chk">✓</span>ทุกแพลตฟอร์ม Meta+Google+TikTok+E-Com</li>
+          <li><span class="pkg-chk">✓</span>Full Pixel, GTM & Conversion API</li>
+          <li><span class="pkg-chk">✓</span>CRM Sheet + Funnel Tracking</li>
+          <li><span class="pkg-chk">✓</span>SEO On-page (≤10 หน้า/เดือน)</li>
+          <li><span class="pkg-chk">✓</span>Competitor Ad Analysis</li>
+          <li><span class="pkg-chk">✓</span>Weekly Report (ทุกแพลตฟอร์ม)</li>
+          <li><span class="pkg-chk">✓</span>Monthly Report + Strategy Plan</li>
+          <li><span class="pkg-chk">✓</span>Strategy Call 60 นาที/เดือน</li>
+          <li><span class="pkg-chk">✓</span>Priority Chat Support</li>
+          <li class="off"><span class="pkg-dash">–</span>Weekly Call & Custom Dashboard</li>
+        </ul>
+        <a href="#cta" class="pkg-btn">เลือก Scale</a>
+      </div>
+      <div class="pkg-card reveal reveal-delay-3">
+        <div class="pkg-tier">Tier 4</div>
+        <div class="pkg-name">Agency<br>Partner</div>
+        <div class="pkg-price">35,000<span class="pkg-price-unit">฿/เดือน</span></div>
+        <div class="pkg-budget">งบโฆษณา <strong>300K+ ฿/เดือน</strong></div>
+        <ul class="pkg-features">
+          <li><span class="pkg-chk">✓</span>ทุกแพลตฟอร์ม ไม่จำกัด</li>
+          <li><span class="pkg-chk">✓</span>Full Tracking & Conversion API</li>
+          <li><span class="pkg-chk">✓</span>Custom Dashboard Real-time</li>
+          <li><span class="pkg-chk">✓</span>SEO On-page ไม่จำกัดหน้า</li>
+          <li><span class="pkg-chk">✓</span>KOL & Influencer Strategy</li>
+          <li><span class="pkg-chk">✓</span>Weekly Performance Review Call</li>
+          <li><span class="pkg-chk">✓</span>Quarterly Business Review</li>
+          <li><span class="pkg-chk">✓</span>SLA ตอบภายใน 2 ชั่วโมง</li>
+          <li><span class="pkg-chk">✓</span>Multi-Account Management</li>
+          <li><span class="pkg-chk">✓</span>ดูแลโดย Tiger โดยตรง</li>
+        </ul>
+        <a href="#cta" class="pkg-btn">ติดต่อสอบถาม</a>
+      </div>
+      <div class="pkg-card reveal reveal-delay-4">
+        <div class="pkg-tier">Add-on</div>
+        <div class="pkg-name">Admin &<br>CRM</div>
+        <div class="pkg-price">6,000<span class="pkg-price-unit">฿/เดือน</span></div>
+        <div class="pkg-budget">เสริมได้กับ <strong>ทุก Package</strong></div>
+        <ul class="pkg-features">
+          <li><span class="pkg-chk">✓</span>จัดการข้อมูลลูกค้าลง Google Sheet แบบ Real-time</li>
+          <li><span class="pkg-chk">✓</span>ระบบติดตาม Lead อัตโนมัติ — Source, Status, วันที่</li>
+          <li><span class="pkg-chk">✓</span>ดูแล Inbox & Comment FB/IG ทุกวัน</li>
+          <li><span class="pkg-chk">✓</span>LINE Broadcast 4–8 ครั้ง/เดือน</li>
+          <li><span class="pkg-chk">✓</span>Auto-reply & Chatbot Flow Setup</li>
+          <li><span class="pkg-chk">✓</span>เชื่อมต่อ LINE OA / WhatsApp / FB</li>
+          <li><span class="pkg-chk">✓</span>Monthly Admin Report</li>
+          <li><span class="pkg-chk">✓</span>ทีม Sales เห็น Lead ทันทีแบบ Real-time</li>
+        </ul>
+        <a href="#cta" class="pkg-btn">เพิ่ม Admin</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>SEO, Google Ads, Facebook Ads, TikTok Ads, WordPress, Adobe Suite</p>
-    </section>
+<!-- ─── PROCESS ─── -->
+<section id="process">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+      <div>
+        <div class="section-label reveal">Process</div>
+        <h2 class="section-title reveal reveal-delay-1">ขั้นตอนการทำงาน<br>ที่ชัดเจน โปร่งใส</h2>
+        <p class="section-sub reveal reveal-delay-2">ทุกเดือนรู้ว่าเกิดอะไรขึ้น ทำไม และจะทำอะไรต่อ — ไม่มีงานดำ ไม่มีข้อแก้ตัว</p>
+      </div>
+      <div class="process-flow">
+        <div class="proc-step reveal">
+          <div class="proc-left"><div class="proc-num">1</div><div class="proc-line"></div></div>
+          <div class="proc-body">
+            <div class="proc-title">Onboarding & Briefing</div>
+            <div class="proc-desc">รับข้อมูลธุรกิจ เป้าหมาย กลุ่มลูกค้า Budget และ Admin Access ทุกแพลตฟอร์ม</div>
+            <span class="proc-time">วันที่ 1–2</span>
+          </div>
+        </div>
+        <div class="proc-step reveal reveal-delay-1">
+          <div class="proc-left"><div class="proc-num">2</div><div class="proc-line"></div></div>
+          <div class="proc-body">
+            <div class="proc-title">Tracking & Setup</div>
+            <div class="proc-desc">ติดตั้ง Pixel, GTM, Conversion Events และ CRM Sheet ก่อนเริ่มแคมเปญ</div>
+            <span class="proc-time">วันที่ 2–5</span>
+          </div>
+        </div>
+        <div class="proc-step reveal reveal-delay-2">
+          <div class="proc-left"><div class="proc-num">3</div><div class="proc-line"></div></div>
+          <div class="proc-body">
+            <div class="proc-title">Strategy & Campaign Launch</div>
+            <div class="proc-desc">วางแผน Setup และเปิดแคมเปญพร้อม Creative Brief สำหรับทีมคุณ</div>
+            <span class="proc-time">วันที่ 5–7</span>
+          </div>
+        </div>
+        <div class="proc-step reveal reveal-delay-3">
+          <div class="proc-left"><div class="proc-num">4</div><div class="proc-line"></div></div>
+          <div class="proc-body">
+            <div class="proc-title">Monitor & Optimize</div>
+            <div class="proc-desc">ติดตามผลทุกวัน ปรับ Budget / Bid / Audience ตามข้อมูลจริง ส่ง Weekly Report ทุกจันทร์</div>
+            <span class="proc-time">สัปดาห์ที่ 1–4</span>
+          </div>
+        </div>
+        <div class="proc-step reveal reveal-delay-4">
+          <div class="proc-left"><div class="proc-num">5</div></div>
+          <div class="proc-body">
+            <div class="proc-title">Report & Next Month Plan</div>
+            <div class="proc-desc">ส่ง Full Report → นัด Strategy Call → วางแผนเดือนถัดไปร่วมกัน</div>
+            <span class="proc-time">สิ้นเดือน</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <p>Check out my previous marketing campaigns and graphic design works.</p>
-    </section>
+<!-- ─── ADD-ONS ─── -->
+<section id="addons" style="padding-top:0;padding-bottom:80px;">
+  <div class="container">
+    <div class="section-label reveal">Add-ons</div>
+    <h2 class="section-title reveal reveal-delay-1" style="font-size:28px;">บริการเสริม</h2>
+    <div class="addons-grid">
+      <div class="addon-card reveal">
+        <div>
+          <div class="addon-title">Pixel & GTM Tracking Setup</div>
+          <div class="addon-desc">ติดตั้งครั้งเดียว สำหรับ Starter Package</div>
+        </div>
+        <div>
+          <div class="addon-price">2,500</div>
+          <div class="addon-price-unit">฿/ครั้ง</div>
+        </div>
+      </div>
+      <div class="addon-card reveal reveal-delay-1">
+        <div>
+          <div class="addon-title">SEO On-page เพิ่มเติม</div>
+          <div class="addon-desc">สำหรับ Starter และ Growth Package</div>
+        </div>
+        <div>
+          <div class="addon-price">3,000</div>
+          <div class="addon-price-unit">฿/เดือน</div>
+        </div>
+      </div>
+      <div class="addon-card reveal reveal-delay-2">
+        <div>
+          <div class="addon-title">เพิ่ม TikTok Ads (แพลตฟอร์มที่ 3)</div>
+          <div class="addon-desc">สำหรับ Growth Package ที่มี 2 แพลตฟอร์มแล้ว</div>
+        </div>
+        <div>
+          <div class="addon-price">5,000</div>
+          <div class="addon-price-unit">฿/เดือน</div>
+        </div>
+      </div>
+      <div class="addon-card reveal">
+        <div>
+          <div class="addon-title">Landing Page Copywriting</div>
+          <div class="addon-desc">เขียน Copy หน้า Landing สำหรับแคมเปญ</div>
+        </div>
+        <div>
+          <div class="addon-price">3,500</div>
+          <div class="addon-price-unit">฿/หน้า</div>
+        </div>
+      </div>
+      <div class="addon-card reveal reveal-delay-1">
+        <div>
+          <div class="addon-title">Competitor Ad Analysis</div>
+          <div class="addon-desc">วิเคราะห์โฆษณาคู่แข่ง ไม่รวมใน Scale ขึ้นไป</div>
+        </div>
+        <div>
+          <div class="addon-price">2,000</div>
+          <div class="addon-price-unit">฿/เดือน</div>
+        </div>
+      </div>
+      <div class="addon-card reveal reveal-delay-2">
+        <div>
+          <div class="addon-title">LINE OA Ads Setup</div>
+          <div class="addon-desc">ตั้งค่าและรันโฆษณาผ่าน LINE Official Account</div>
+        </div>
+        <div>
+          <div class="addon-price">4,000</div>
+          <div class="addon-price-unit">฿/เดือน</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: sjongkhae@gmail.com</p>
-        <p>Phone: 093-149-2935</p>
-        <a href="mailto:sjongkhae@gmail.com" class="cta-button">Send Email</a>
-    </section>
+<!-- ─── CTA ─── -->
+<section id="cta" style="background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-label reveal" style="justify-content:center;">Contact</div>
+      <h2 class="cta-title reveal reveal-delay-1" data-th="พร้อม Scale<br>ธุรกิจของคุณ?" data-en="Ready to Scale<br>Your Business?">พร้อม Scale<br><span class="blue">ธุรกิจของคุณ?</span></h2>
+      <p class="cta-sub reveal reveal-delay-2" data-th="ปรึกษาฟรีก่อนตัดสินใจ — บอกเป้าหมายและงบโฆษณา Tiger จะแนะนำ Package ที่เหมาะสมที่สุด" data-en="Free consultation before you decide — share your goals and ad budget, Tiger will recommend the best Package for you.">ปรึกษาฟรีก่อนตัดสินใจ — บอกเป้าหมายและงบโฆษณา Tiger จะแนะนำ Package ที่เหมาะสมที่สุด</p>
+      <div class="cta-btns reveal reveal-delay-3">
+        <a href="https://fastwork.co/user/tigersj1997" class="btn-primary" target="_blank" data-th="ติดต่อผ่าน Fastwork →" data-en="Contact via Fastwork →">ติดต่อผ่าน Fastwork →</a>
+        <a href="#packages" class="btn-outline" data-th="ดู Packages อีกครั้ง" data-en="View Packages Again">ดู Packages อีกครั้ง</a>
+      </div>
+      <div class="contact-grid reveal reveal-delay-4">
+        <div class="contact-card">
+          <div class="contact-label">Fastwork Profile</div>
+          <div class="contact-value">fastwork.co/user/tigersj1997</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label" data-th="ตำแหน่ง" data-en="Location">ตำแหน่ง</div>
+          <div class="contact-value" data-th="เชียงใหม่, ประเทศไทย" data-en="Chiang Mai, Thailand">เชียงใหม่, ประเทศไทย</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label" data-th="ประสบการณ์" data-en="Experience">ประสบการณ์</div>
+          <div class="contact-value" data-th="Agency Level · 3+ ปี" data-en="Agency Level · 3+ Years">Agency Level · 3+ ปี</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Suriyawong. All rights reserved.</p>
-    </footer>
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">Tiger<span>.</span></div>
+  <div class="footer-copy">© 2025 Suriyawong J. · Paid Media & Digital Marketing Specialist · Chiang Mai, Thailand</div>
+</footer>
 
+<script>
+/* ─── SCROLL REVEAL ─── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ─── SMOOTH SCROLL ─── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+/* ─── HAMBURGER MENU ─── */
+function toggleMenu() {
+  document.getElementById('hamBtn').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('hamBtn').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ─── LANGUAGE SWITCH ─── */
+let currentLang = 'th';
+function toggleLang() {
+  currentLang = currentLang === 'th' ? 'en' : 'th';
+  document.getElementById('langLabel').textContent = currentLang === 'th' ? 'EN' : 'TH';
+  document.querySelectorAll('[data-th][data-en]').forEach(el => {
+    const txt = currentLang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-th');
+    if (txt) el.innerHTML = txt;
+  });
+  document.documentElement.lang = currentLang;
+}
+</script>
 </body>
 </html>
